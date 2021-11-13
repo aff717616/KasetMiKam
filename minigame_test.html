@@ -21,6 +21,10 @@
 <body>
 	<!-- Game Elements move -->
 	<div class="wrapper" id="wrapper">
+		<!-- Farmer -->
+		<div class="game-frame">
+			<img id="farmer" src="img/farmer2.gif">
+		</div>
 		<div class="section">
 
 		</div>
@@ -113,10 +117,7 @@
 		</div>
 	</div>
 
-	<!-- Farmer -->
-	<div class="game-frame">
-		<img id="farmer" src="img/farmer2.gif">
-	</div>
+	
 
 
 
@@ -191,11 +192,16 @@
 
 	function isSmash(obj1, obj2) {
 		var rect1 = obj1.getBoundingClientRect();
-		var smash1x = rect1.right;
 		var rect2 = obj2.getBoundingClientRect();
-		var smash2x = rect2.right;
+		var smash1x = rect1.right;
+		var smash2x = rect2.left;
 		var size = rect2.width;
-		if ((size+smash1x)>=smash2x&&smash2x>smash1x){
+		console.log(smash1x+"__1")
+		console.log(smash2x+"__2")
+		console.log(size+"__3")
+		//if (smash1x==smash2x){
+		if ((size+smash1x)>=smash2x&&smash2x>smash1x){ //100vw = 1536vx
+			console.log("boomz")
 			return 1;
 		} else {
 			return 0;
